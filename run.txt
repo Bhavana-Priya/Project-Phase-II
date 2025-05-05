@@ -1,0 +1,4 @@
+python -m venv stockvenv
+pip install -r requirements.txt
+.venv39\Scripts\activate
+python manage.py runserver

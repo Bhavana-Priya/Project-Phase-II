@@ -1,0 +1,78 @@
+STOCKCOPY/
+│
+├── .idea/
+├── .venv/
+├── app/
+│   ├── Data/
+│   │   ├── new_tickers.csv
+│   │   ├── Tickers.csv
+│   ├── migrations/
+│   │   ├── __pycache__/
+│   │   ├── __init__.py
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_user.py
+│   ├── static/
+│   │   ├── css/
+│   │   │   ├── about.css
+│   │   │   ├── bootstrap.min.css
+│   │   │   ├── contact.css
+│   │   │   ├── logstyle.css
+│   │   │   ├── sigstyle.css
+│   │   │   ├── style.css
+│   │   │   ├── styles.css
+│   │   ├── image/
+│   │   │   ├── banner.png
+│   │   │   ├── dollar_icon.png
+│   │   │   ├── SM.jpg
+│   │   │   ├── stock1.png
+│   │   │   ├── user.png
+│   │   ├── js/
+│   │   │   ├── bootstrap.min.js
+│   │   │   ├── jquery.slim.min.js
+│   │   │   ├── logscript.js
+│   │   │   ├── main.js
+│   │   │   ├── popper.min.js
+│   │   │   ├── scripts.js
+│   │   │   ├── sigscript.js
+│   │   │   ├── TodayStock.js
+│   ├── templates/
+│   │   ├── About.html
+│   │   ├── API_Down.html
+│   │   ├── Home.html
+│   │   ├── index.html
+│   │   ├── Invalid_Days_Format.html
+│   │   ├── login.html
+│   │   ├── Negative_Days.html
+│   │   ├── Overflow_days.html
+│   │   ├── result.html
+│   │   ├── search.html
+│   │   ├── Signup.html
+│   │   ├── ticker.html
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── views.py
+├── core/
+│   ├── __pycache__/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+├── staticfiles/
+│   ├── admin/
+│   ├── css/
+│   ├── image/
+│   ├── js/
+│   ├── staticfiles.json
+├── db.sqlite3
+├── manage.py
+├── Recording.mp4
+├── requirements.txt
+├── run.bat
+├── stock.jpg
+
+
+

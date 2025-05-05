@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Prediction</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="icon" href="{% static 'image/dollar_icon.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<header class="hero-section">
+    <img src="{% static 'image/SM.jpg' %}" alt="Stock Market Logo" class="logo-image">
+    <nav>
+        <ul class="nav-list">
+            <li><a href="{% url 'index' %}">Stock</a></li>
+            {% if request.session.username %}
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="#contact" onclick="smoothScroll(event, '#contact')">Contact Us</a></li>
+                <li class="user-dropdown">
+                    <a href="#" class="user-icon" onclick="toggleDropdown(event)">
+                        <i class="fas fa-user-circle"></i>
+                    </a>
+                    <ul class="dropdown-menu" id="dropdown-menu">
+                        <li><span>{{ request.session.username }}</span></li>
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                    </ul>
+                </li>
+            {% else %}
+                <li><a href="{% url 'signup' %}"><i class="fas fa-user-circle"></i> Signup/Login</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div class="hero-content">
+        <h1>Welcome to Stock Market Price Prediction</h1>
+        <p>Leverage the power of machine learning to predict the future of stock prices. Get insights, make data-driven decisions, and elevate your investments!</p>
+    </div>
+</header>
+
+<section class="features-section">
+    <div class="feature feature-how">
+        <h2>How Stock Prediction is Done</h2>
+        <p>Our system analyzes historical data using cutting-edge algorithms to project future stock prices.</p>
+    </div>
+
+    <div class="feature feature-algorithms">
+        <h2>Algorithms Used</h2>
+        <ul>
+            <li><strong>Linear Regression:</strong> Predict future stock movements through statistical analysis.</li>
+            <li><strong>Support Vector Machines (SVM):</strong> Predict stock prices using machine learning models.</li>
+            <li><strong>Time Series Analysis:</strong> Forecast future prices using ARIMA and other models.</li>
+            <li><strong>Random Forest & Gradient Boosting:</strong> Learn from patterns to predict stock trends.</li>
+        </ul>
+    </div>
+
+    <div class="feature feature-note">
+        <h2>Important Note</h2>
+        <p>Remember, stock market predictions, though advanced, can’t be fully accurate due to market volatility.</p>
+    </div>
+
+    <div class="feature feature-conclusion">
+        <h2>Conclusion</h2>
+        <p>Use our system for insightful predictions but always stay informed with real-time data for optimal decisions.</p>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <h2><b><i>Contact Us</i></b></h2>
+    <p><b>Email:</b> info@stockprediction.com</p>
+    <p><b>Phone:</b> +91 9876543210</p>
+    <p><b>Address:</b> Enathur, Kanchipuram.</p>
+</section>
+
+
+<!-- Additional Content Starts Here -->
+
+<section class="benefits-section">
+    <h2>Why Choose Us?</h2>
+    <div class="benefit-cards">
+        <div class="benefit-card">
+            <h3>Real-Time Insights</h3>
+            <p>Stay ahead of the curve with data refreshed frequently to reflect real-time stock changes.</p>
+        </div>
+        <div class="benefit-card">
+            <h3>AI Powered Analytics</h3>
+            <p>Our intelligent models learn and improve continuously to enhance prediction accuracy.</p>
+        </div>
+        <div class="benefit-card">
+            <h3>User-Friendly Dashboard</h3>
+            <p>Track predictions, view charts, and make notes—all in a sleek and intuitive interface.</p>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials-section">
+    <h2>What Our Users Say</h2>
+    <div class="testimonials">
+        <div class="testimonial">
+            <p>"This platform helped me understand stock trends better. It's a game-changer!"</p>
+            <span>- Ravi Kumar, Investor</span>
+        </div>
+        <div class="testimonial">
+            <p>"I love the simplicity and accuracy. I'm using it daily to check market signals."</p>
+            <span>- Priya Sharma, Trader</span>
+        </div>
+        <div class="testimonial">
+            <p>"As a beginner, the insights and predictions gave me confidence to invest smartly."</p>
+            <span>- Anil Mehta, Student</span>
+        </div>
+    </div>
+</section>
+
+<section class="market-news-section">
+    <h2>Live Market Updates</h2>
+    <p><em>Coming soon: A real-time news API integration that displays live updates from the financial world.</em></p>
+</section>
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+        <h3>Is this platform free to use?</h3>
+        <p>Yes, our prediction features are completely free. Premium features may be introduced later.</p>
+
+        <h3>How accurate are the predictions?</h3>
+        <p>Our machine learning models achieve high accuracy, but no prediction is 100% guaranteed. Always invest wisely.</p>
+
+        <h3>Can I use this on mobile?</h3>
+        <p>Yes! The platform is responsive and works smoothly on all devices.</p>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Ready to Predict the Market?</h2>
+    <p>Join thousands of users leveraging AI to stay ahead in the stock game.</p>
+    <a href="{% url 'signup' %}" class="cta-button">Get Started Now</a>
+</section>
+
+<!-- Chatbot Icon -->
+<div id="chat-icon" onclick="toggleChatbot()">
+    💬
+</div>
+
+<!-- Chatbot Popup -->
+<div id="chat-popup">
+    <div id="chat-header">
+        <span>StockPredict Bot</span>
+        <span onclick="toggleChatbot()" style="cursor:pointer; float:right;">✖️</span>
+
+    </div>
+    <div id="chat-messages"></div>
+    <div id="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Ask something..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+
+<script>
+const username = "{{ request.session.username|default:'User' }}";
+
+function toggleChatbot() {
+    const popup = document.getElementById('chat-popup');
+    const currentStyle = window.getComputedStyle(popup).display;
+    popup.style.display = (currentStyle === 'none') ? 'flex' : 'none';
+}
+
+async function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const msg = input.value.trim();
+    if (!msg) {
+        alert("Please type a message before sending.");
+        return;
+    }
+
+    const messages = document.getElementById('chat-messages');
+
+    // USER MESSAGE (✅ correct avatar now)
+    messages.innerHTML += `
+        <div class="chat-bubble user-bubble">
+            <div class="bubble-content"><b>${username}:</b> ${msg}</div>
+        </div>
+    `;
+    input.value = '';
+    messages.scrollTop = messages.scrollHeight;
+
+    // BOT "Typing..." placeholder (✅ correct avatar now)
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'chat-bubble bot-bubble typing';
+    typingDiv.innerHTML = `
+        <img src="https://i.imgur.com/4M34hi2.png" class="avatar" alt="Bot">
+        <div class="bubble-content">Typing<span class="dots"><span>.</span><span>.</span><span>.</span></span></div>
+    `;
+    messages.appendChild(typingDiv);
+    messages.scrollTop = messages.scrollHeight;
+
+    // Fetch Gemini response
+    const response = await fetch("/gemini-chat-api/", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken'),
+        },
+        body: JSON.stringify({ prompt: msg })
+    });
+
+    const data = await response.json();
+
+    // Remove typing and show actual reply
+    messages.removeChild(typingDiv);
+    messages.innerHTML += `
+        <div class="chat-bubble bot-bubble">
+            <img src="https://i.imgur.com/4M34hi2.png" class="avatar" alt="Bot">
+            <div class="bubble-content"><b>Bot:</b> ${data.reply}</div>
+        </div>
+    `;
+    messages.scrollTop = messages.scrollHeight;
+}
+
+// CSRF helper
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let cookie of cookies) {
+            const trimmed = cookie.trim();
+            if (trimmed.startsWith(name + '=')) {
+                cookieValue = decodeURIComponent(trimmed.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+{% if request.session.show_confetti %}
+<script>
+window.onload = function() {
+    launchConfetti();
+    fetch("{% url 'clear_confetti' %}");
+};
+
+function launchConfetti() {
+    const duration = 3000;
+    const end = Date.now() + duration;
+    (function frame() {
+        confetti({
+            particleCount: 7,
+            angle: 60,
+            spread: 75,
+            origin: { x: 0 },
+            colors: ['#bb0000', '#ffffff', '#0000ff', '#00bb00', '#ffff00']
+        });
+        confetti({
+            particleCount: 7,
+            angle: 120,
+            spread: 75,
+            origin: { x: 1 },
+            colors: ['#bb0000', '#ffffff', '#0000ff', '#00bb00', '#ffff00']
+        });
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    })();
+}
+</script>
+{% endif %}
+
+<script>
+    function toggleDropdown(event) {
+        event.stopPropagation(); 
+        let dropdown = document.getElementById("dropdown-menu");
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+    document.addEventListener("click", function () {
+        document.getElementById("dropdown-menu").style.display = "none";
+    });
+    document.getElementById("dropdown-menu").addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+</script>
+<script>
+function smoothScroll(event, target) {
+    event.preventDefault();
+    const element = document.querySelector(target);
+    element.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

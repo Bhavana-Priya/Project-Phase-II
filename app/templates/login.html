@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+  {% load static %}
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap'>
+  <link rel="stylesheet" href="{% static 'css/logstyle.css' %}">
+  <link rel="icon" href="{% static 'image/dollar_icon.png' %}">
+</head>
+<body>
+  <button class="go-home-btn" onclick="window.location.href='{% url 'home' %}'">Go to Home</button>
+  <div class="container">
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required />
+      <label for="otp">Enter OTP (if enabled)</label>
+      <input type="text" id="otp" name="otp" placeholder="Enter OTP (if applicable)" /> 
+      <button type="submit">LOG IN</button>
+      <div class="signup-link">New User? <a href="{% url 'signup' %}">Signup Here</a></div>
+    </form>
+    <div class="ear-l"></div>
+    <div class="ear-r"></div>
+    <div class="panda-face">
+      <div class="blush-l"></div>
+      <div class="blush-r"></div>
+      <div class="eye-l"><div class="eyeball-l"></div></div>
+      <div class="eye-r"><div class="eyeball-r"></div></div>
+      <div class="nose"></div>
+      <div class="mouth"></div>
+    </div>
+    <div class="hand-l"></div>
+    <div class="hand-r"></div>
+    <div class="paw-l"></div>
+    <div class="paw-r"></div>
+  </div>
+  <script src="{% static 'js/logscript.js' %}"></script>
+</body>
+</html>

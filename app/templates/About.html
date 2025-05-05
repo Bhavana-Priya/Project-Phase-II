@@ -1,0 +1,283 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Stock Market Prediction</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="icon" href="{% static 'image/dollar_icon.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-transition"></div>
+    
+    <nav class="top-nav">
+        <div class="logo">
+            <img src="{% static 'image/dollar_icon.png' %}" alt="Logo">
+            <span>StockPredict</span>
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'home' %}" class="nav-item"><i class="fas fa-home"></i> Home</a>
+        </div>
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>About <span class="highlight-text">StockPredict</span></h1>
+            <p>Pioneering the future of investment with AI-driven stock market analysis</p>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-icon"><i class="fas fa-chart-pie"></i></div>
+            <div class="floating-icon"><i class="fas fa-dollar-sign"></i></div>
+            <div class="floating-icon"><i class="fas fa-brain"></i></div>
+            <div class="floating-icon"><i class="fas fa-rocket"></i></div>
+        </div>
+    </div>
+    
+    <div class="about-container">
+        <div class="section-indicator">
+            <div class="indicator active" data-section="who-we-are"></div>
+            <div class="indicator" data-section="mission"></div>
+            <div class="indicator" data-section="why-choose"></div>
+            <div class="indicator" data-section="values"></div>
+            <div class="indicator" data-section="team"></div>
+        </div>
+        
+        <section id="who-we-are" class="content-section active">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h2>Who We Are</h2>
+            </div>
+            <div class="section-content">
+                <div class="text-content">
+                    <p>We are a passionate team dedicated to revolutionizing the stock market through the power of technology and machine learning. Our mission is to make stock predictions accessible, accurate, and beneficial for all investors, from beginners to experts.</p>
+                    <p>Founded in 2023, our team brings together expertise in finance, data science, and artificial intelligence to build a platform that truly understands market dynamics.</p>
+                </div>
+                <div class="visual-content">
+                    <div class="chart-animation">
+                        <div class="chart-line"></div>
+                        <div class="chart-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="mission" class="content-section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h2>Our Mission</h2>
+            </div>
+            <div class="section-content reverse">
+                <div class="visual-content">
+                    <div class="mission-visual">
+                        <div class="mission-circle"></div>
+                        <div class="mission-arrow"></div>
+                        <div class="mission-target"></div>
+                    </div>
+                </div>
+                <div class="text-content">
+                    <p>Our goal is to provide users with a state-of-the-art stock prediction platform that empowers investors to make informed decisions and achieve financial freedom.</p>
+                    <p>We aim to bridge the gap between data science and stock market investing, making it easier for everyone to navigate the financial landscape with confidence and insight.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="why-choose" class="content-section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h2>Why Choose Us?</h2>
+            </div>
+            <div class="section-content">
+                <div class="text-content">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                            <h3>Advanced ML Algorithms</h3>
+                            <p>State-of-the-art machine learning models that continuously improve with new data.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <h3>Real-Time Analysis</h3>
+                            <p>Lightning-fast data processing to give you insights when they matter most.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
+                            <h3>Data Security</h3>
+                            <p>Enterprise-grade security to protect your information and investment data.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h3>Intuitive Interface</h3>
+                            <p>User-friendly design that makes complex data accessible and actionable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="values" class="content-section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h2>Our Core Values</h2>
+            </div>
+            <div class="section-content">
+                <div class="values-wrapper">
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>Innovation</h3>
+                        <p>Constantly pushing boundaries to deliver cutting-edge solutions.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
+                        <h3>Integrity</h3>
+                        <p>Maintaining the highest standards of honesty and ethical practice.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Trust</h3>
+                        <p>Building relationships based on reliability and consistent performance.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon"><i class="fas fa-users"></i></div>
+                        <h3>Community</h3>
+                        <p>Fostering a supportive environment for all investors to grow together.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="team" class="content-section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h2>Our Team</h2>
+            </div>
+            <div class="section-content">
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                           <img src="{% static 'image/poorvadevi.jpg' %}" style="width:300px; height:300px;" alt="Dr.R.Poorvadevi">
+                        </div>
+                        <h3>Dr.R.Poorvadevi</h3>
+                        <p><strong>Role:</strong> Project Guide</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                           <img src="{% static 'image/Bhavana.jpg' %}" style="width:300px; height:320px;" alt="Chalamcharla Bhavana Priya">
+                        </div>
+                        <h3>Chalamcharla Bhavana Priya</h3>
+                        <p><strong>Role:</strong> Developer, Designer</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                           <img src="{% static 'image/manasa.jpg' %}"  style="width:300px; height:300px;" alt="Davu Manasa">
+                        </div>
+                        <h3>Davu Manasa</h3>
+                        <p><strong>Role:</strong> Data Analyst</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="quote-section">
+        <div class="quote-container">
+            <div class="quote-marks"><i class="fas fa-quote-left"></i></div>
+            <p class="quote-text">Empowering investors with data-driven insights for a brighter financial future.</p>
+            <div class="quote-marks"><i class="fas fa-quote-right"></i></div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@stockprediction.com</p>
+                <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                <p><i class="fas fa-map-marker-alt"></i> Enathur, Kanchipuram</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'index' %}">Stock Prediction</a>
+                <a href="{% url 'about' %}">About Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 StockPredict. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Wait for page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Page transition effect
+            setTimeout(() => {
+                document.querySelector('.page-transition').classList.add('loaded');
+            }, 100);
+            
+            // Mobile menu toggle
+            document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.toggle('active');
+            });
+            
+            // User dropdown toggle
+            const userTrigger = document.querySelector('.user-trigger');
+            if (userTrigger) {
+                userTrigger.addEventListener('click', function() {
+                    document.querySelector('.user-dropdown').classList.toggle('active');
+                });
+            }
+            
+            // Section navigation
+            const indicators = document.querySelectorAll('.indicator');
+            const sections = document.querySelectorAll('.content-section');
+            
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    
+                    // Update indicators
+                    indicators.forEach(ind => ind.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update sections
+                    sections.forEach(section => section.classList.remove('active'));
+                    document.getElementById(sectionId).classList.add('active');
+                });
+            });
+            
+            // Intersection Observer for section animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            // Observe all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Observe quote section
+            observer.observe(document.querySelector('.quote-section'));
+        });
+    </script>
+</body>
+</html>
